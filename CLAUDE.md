@@ -4,7 +4,7 @@
 
 ## 현재 상태 (2026-11-24)
 - 매장 키워드 2,500쪽(사용자 원본 791 + 추가 209 + 확장 1,500) + 메인·전체 안내·소개. 로컬 빌드·check_all 까지 함.
-- 도메인·GitHub 저장소·서버 폴더는 아직 없음(SITE.md '확인 필요'). `lib/site.ts` SITE_URL 은 자리표시자.
+- 도메인 https://dorothypetgwangju.co.kr, 저장소 https://github.com/Jeongdonghwan/drtgwangju_prj.git (로컬 폴더 이름은 dorothypet_gj_prj). 빌드·배포는 GitHub Actions(main 푸시마다), 서버 폴더 `/var/www/dorothypet_gj`.
 - 블로그(분양 가이드)는 넣지 않았다 — 대구 글을 그대로 쓰면 사이트끼리 같은 글이 된다. 필요하면 광주용으로 새로 쓰고 대구 사이트의 `app/blog`·`lib/blog.ts` 를 가져온다.
 
 ## 규칙

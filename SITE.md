@@ -31,8 +31,8 @@ python -I ~/.claude/skills/site-launch/scripts/check_all.py C:/side_Prj/dorothyp
 
 ## 확인 필요 (사용자)
 
-- [ ] 도메인 (`lib/site.ts` SITE_URL 은 자리표시자 `https://dorothypetgwangju.co.kr`)
-- [ ] GitHub 저장소(대구는 drtdaegu_prj) — 만들면 main 푸시로 Actions 가 빌드·배포. 서버 폴더는 `/var/www/dorothypet_gj` 예정
+- [x] 도메인 dorothypetgwangju.co.kr (2026-11-24 사용자 결정)
+- [x] GitHub 저장소 https://github.com/Jeongdonghwan/drtgwangju_prj.git (2026-11-24) — main 푸시마다 Actions 가 빌드해 deploy 브랜치로. 서버 폴더 `/var/www/dorothypet_gj`
 - [ ] 서치어드바이저·서치콘솔 소유확인 코드
 - [ ] 광주점 사업자 정보(상호·대표·사업자번호), 매장 사진
 - [ ] 광주점 전화 010-8544-8584 가 상담 전화로 맞는지(공식 사이트 지점 안내 번호)
