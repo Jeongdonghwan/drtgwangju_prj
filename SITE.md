@@ -26,14 +26,14 @@ python -I ~/.claude/skills/site-launch/scripts/check_all.py C:/side_Prj/dorothyp
 
 - `lib/site.ts`: 광주점 주소·전화(공식 사이트 지점 안내), STORE(광주 남구 주월동, 먼 지역 = 전남·전북), 지점 목록은 광주점·부산본점·대구점 순.
 - 블로그 없음(`app/blog`·`lib/blog.ts` 삭제, 메뉴·사이트맵·RSS·llms 에서 뺌). 대구 글을 복사하지 않으려고.
-- 소유확인 코드 없음(`app/layout.tsx` verification 삭제 — 받으면 넣는다).
+- 소유확인 코드: 광주 도메인용으로 새로 받아 넣음(2026-11-25).
 - 매장 사진 없음 → 견종·대표 사진(대구와 같음). 사업자 정보 비어 있어 하단에 상호·주소만.
 
 ## 확인 필요 (사용자)
 
 - [x] 도메인 dorothypetgwangju.co.kr (2026-11-24 사용자 결정)
 - [x] GitHub 저장소 https://github.com/Jeongdonghwan/drtgwangju_prj.git (2026-11-24) — main 푸시마다 Actions 가 빌드해 deploy 브랜치로. 서버 폴더 `/var/www/dorothypet_gj`
-- [ ] 서치어드바이저·서치콘솔 소유확인 코드
+- [x] 서치어드바이저·서치콘솔 소유확인 코드 (2026-11-25 app/layout.tsx)
 - [ ] 광주점 사업자 정보(상호·대표·사업자번호), 매장 사진
 - [ ] 광주점 전화 010-8544-8584 가 상담 전화로 맞는지(공식 사이트 지점 안내 번호)
 - [ ] 호텔·미용 키워드 6개를 남길지(원본에 있어 만들었지만 그 서비스 안내는 없음)

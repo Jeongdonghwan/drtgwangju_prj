@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: '/', types: { 'application/rss+xml': [{ url: '/rss.xml', title: `${BRAND} 분양 안내` }] } },
   icons: { icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/icon.png', type: 'image/png', sizes: '192x192' }], apple: '/apple-touch-icon.png' },
+  verification: { google: 'QSuInbC0BbTX3vEXaRwqn_i-Da676YfYlLtimQgbPFs', other: { 'naver-site-verification': '4d3f3d9a779ff1c76bc31e8792f17956044d8709' } },
 };
 
 export const viewport: Viewport = { themeColor: '#ffffff', width: 'device-width', initialScale: 1 };
