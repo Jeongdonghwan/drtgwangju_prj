@@ -1,0 +1,6 @@
+{
+ "launch": "2026-11-25",
+ "everyDays": 2,
+ "maxWave": 4,
+ "_note": "post-launch 고정 규칙: D0 25% → D2 50% → D4 75% → D6 100%. 순서 = data/pages.json 순서(원본 791 클릭순 → 추가 209 → 확장 1,500). GitHub Actions 가 매일 06:00 KST 다시 빌드하면서 연다."
+}

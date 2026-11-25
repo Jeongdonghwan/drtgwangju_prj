@@ -29,6 +29,7 @@ def main():
         store.append(dict(kw=kw, slug=slug(kw), set='store', impressions=n(r[1]), clicks=n(r[2]), dupRows=0, added=bool(r[4].strip()) if len(r) > 4 else False, note=r[4].strip() if len(r) > 4 else '', src=r[3].strip() if len(r) > 3 else ''))
     assert len(store) in (1000, 2000, 2500), len(store)
     json.dump({'store': store, 'franchise': []}, open(os.path.join(ROOT, 'data', 'pages.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+    json.dump({'_note': 'check_all 7·8번 게이트용 — pages.json store 의 slug', 'pages': [{'slug': p['slug'], 'kw': p['kw']} for p in store]}, open(os.path.join(ROOT, 'data', 'site-pages.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 
     wb = openpyxl.Workbook(); ws = wb.active; ws.title = '키워드'
     ws.append(['키워드', 'URL', '노출수', '클릭수', '비고'])

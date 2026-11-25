@@ -2,6 +2,7 @@
 import pagesData from '../data/pages.json';
 import breedData from '../data/breeds.json';
 import regionData from '../data/regions.json';
+import drip from '../data/drip.json';
 
 export interface Breed {
   id: string; name: string; kind: 'dog' | 'cat'; size: string; coat: string; shed: string; trait: string; care: string;
@@ -82,7 +83,12 @@ function parseFr(raw: any): FrPage {
   return { set: 'franchise', kw: raw.kw, slug: raw.slug, regionKey: rk, region: REGIONS[rk], word: m[2] as FrWord, added: raw.added, breakdown: m[1] === rk };
 }
 
-export const STORE_PAGES: StorePage[] = (pagesData.store as any[]).map(parseStore);
+// 나눠 열기(post-launch, 2026-11-25): pages.json 순서대로 4묶음, 오픈일 D0·D2·D4·D6. env OPEN_WAVE 가 있으면 그 값(점검은 OPEN_WAVE=4).
+export const ALL_STORE_PAGES: StorePage[] = (pagesData.store as any[]).map(parseStore);
+const kstToday = (process.env.BUILD_DATE || new Date(Date.now() + 9 * 3600e3).toISOString()).slice(0, 10);
+export const OPEN_WAVE = Number(process.env.OPEN_WAVE) || Math.max(1, Math.min(drip.maxWave, Math.floor((Date.parse(kstToday) - Date.parse(drip.launch)) / 864e5 / drip.everyDays) + 1));
+export const waveOf = (i: number) => Math.floor((i * drip.maxWave) / ALL_STORE_PAGES.length) + 1;
+export const STORE_PAGES: StorePage[] = ALL_STORE_PAGES.filter((_, i) => waveOf(i) <= OPEN_WAVE);
 export const FR_PAGES: FrPage[] = (pagesData.franchise as any[]).map(parseFr);
 
 const dec = (slug: string) => { try { return decodeURIComponent(slug); } catch { return slug; } };

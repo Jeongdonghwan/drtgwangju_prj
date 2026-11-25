@@ -4,6 +4,7 @@
 export const SITE_URL = process.env.SITE_URL || 'https://dorothypetgwangju.co.kr'; // 2026-11-24 사용자 결정
 export const FRANCHISE_SITE = process.env.FRANCHISE_SITE || 'https://dorothypetfc.co.kr'; // 가맹 창업 사이트(dorothypet_franchise_prj)
 export const BRAND = '도로시펫';
+export const UPDATED = '2026-11-25'; // 본문·title·h1 을 바꾼 날 올린다(sitemap lastmod·dateModified·'최종 수정')
 export const BRAND_EN = 'DOROTHY PET';
 
 export const LINKS = {

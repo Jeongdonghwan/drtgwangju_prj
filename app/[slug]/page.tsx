@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { STORE_PAGES, getStore, storePath, storeEncPath, relatedStore } from '../../lib/data';
 import { composeRay } from '../../lib/ray';
-import { BRAND, CONTACT, LINKS, tel } from '../../lib/site';
+import { BRAND, CONTACT, LINKS, SITE_URL, UPDATED, tel } from '../../lib/site';
 import { breadcrumbJsonLd, faqJsonLd, pageListJsonLd, ogMeta } from '../../lib/jsonld';
 import { Actions, IconArrow, IconPhone, JsonLd } from '../../components/Common';
 
@@ -37,6 +37,7 @@ export default function StorePage({ params }: { params: { slug: string } }) {
       <JsonLd data={[
         breadcrumbJsonLd([{ name: '홈', path: '/' }, { name: '전체 안내', path: '/area/' }, { name: p.kw, path }]),
         faqJsonLd(c.faq),
+        { '@context': 'https://schema.org', '@type': 'WebPage', name: c.title, url: `${SITE_URL}${path}`, dateModified: UPDATED },
         pageListJsonLd(`${p.kw} 관련 안내`, groups.flatMap((g) => g.items).map((x) => ({ name: x.kw, path: storeEncPath(x) }))),
       ]} />
 
@@ -77,6 +78,7 @@ export default function StorePage({ params }: { params: { slug: string } }) {
             <h2>{p.kw} 자주 묻는 질문</h2>
             <div className="faq">{c.faq.map((f) => <details key={f.q}><summary>{f.q}<i /></summary><p>{f.a}</p></details>)}</div>
           </section>
+          <p className="x-updated">최종 수정 <time dateTime={UPDATED}>{UPDATED}</time></p>
         </div>
         <aside className="x-side">
           <h3>바로 확인</h3>

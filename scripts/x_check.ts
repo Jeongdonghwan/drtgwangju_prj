@@ -46,7 +46,7 @@ console.log(`description 길이 ${Math.min(...dl)}~${Math.max(...dl)} (45~80 밖
 console.log(`title 길이 ${Math.min(...tl)}~${Math.max(...tl)} · 상호 붙은 쪽 ${[...titles.keys()].filter((x) => x.includes(' | ')).length} · 상호 뺀 쪽 ${[...titles.keys()].filter((x) => !x.includes(' | ')).length} · 중복 ${[...titles.values()].filter((v) => v > 1).length} · h1 불일치·길이 초과 ${tBad}`);
 console.log(`h1 중복 ${[...h1.values()].filter((v) => v > 1).length} · 조사 오류 ${josaBad}`);
 console.log(`본문(설명+요약+절+FAQ답, 공백 제외) 평균 ${Math.round(avg(lens))} · 최소 ${Math.min(...lens)} · 최대 ${Math.max(...lens)}`);
-console.log(`절 문단 평균 ${Math.round(avg(plens))} · 최소 ${Math.min(...plens)} · 최대 ${Math.max(...plens)} · 키워드 든 h2 평균 ${(kwH2 / pages.length).toFixed(1)}개`);
+console.log(`절 문단 200~260 밖 ${plens.filter((x) => x < 200 || x > 260).length} · 평균 ${Math.round(avg(plens))} · 최소 ${Math.min(...plens)} · 최대 ${Math.max(...plens)} · 키워드 든 h2 평균 ${(kwH2 / pages.length).toFixed(1)}개`);
 console.log('같은 문장 — 같은 견종:', sample(within(group((x) => x.breed?.id || `g-${x.generic}`), 600)));
 console.log('같은 문장 — 같은 동네:', sample(within(group((x) => x.placeKey), 400)));
 console.log('같은 문장 — 같은 의도:', sample(within(group((x) => x.intent), 400)));

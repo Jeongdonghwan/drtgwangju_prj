@@ -425,3 +425,5 @@ body { padding-bottom: 66px; }
 .x-side dl { grid-template-columns: 1fr; }
 .x-side .btn-primary { justify-content: center; }
 @media (max-width: 900px) { .x-grid { grid-template-columns: 1fr; gap: 36px; padding-top: 40px; } .x-side { position: static; } .x-sum { padding: 22px 18px; } .x-sum dl { grid-template-columns: 1fr; } }
+
+.x-updated { margin: 28px 0 0; font-size: .82rem; color: var(--ink-2); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }

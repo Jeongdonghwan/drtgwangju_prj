@@ -8,6 +8,7 @@ cd "$(dirname "$0")/.."
 rm -rf ./out
 SITE_URL=$URL npx next build
 grep -q "$URL" out/sitemap.xml || { echo "sitemap에 주소가 없음"; exit 1; }
+python3 -c "import os,sys; o='out'; [os.remove(os.path.join(o,'og',f)) for f in os.listdir(os.path.join(o,'og')) if f[:-4] not in ('home','area') and not os.path.isdir(os.path.join(o,f[:-4]))]"  # 안 열린 키워드 og 빼기
 REMOTE=$(git remote get-url origin)
 cd out
 git init -q -b deploy && git add -A
